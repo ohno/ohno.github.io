@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>popup.js</title>
+    <meta name="description" content="Popup without jQuery">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- popup.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ohno/popup.js/popup.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/ohno/popup.js@latest/popup.min.js"></script>
+    <!-- clipboard.js -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.min.js"></script>
+    <!-- download.js -->
+    <script src="https://cdn.jsdelivr.net/gh/rndme/download@latest/download.min.js"></script>
+    <!-- escape-html -->
+    <script src="https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js"></script>
+    <!-- Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- EasyMDE -->
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- MoreToggles.css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css/output/moretoggles.min.css">
+    <!-- GitHub:buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/atom-one-dark.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <!-- c3.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js"></script>
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <header>
+      <a class="logo" href="https://github.com/ohno/">
+        <h1>Hello Worlds!</h1>
+      </a>
+      <span>
+        <a class="material-icons" onClick='menu(this);'>menu</a>
+      </span>
+    </header>
+
+    <!-- Menu -->
+
+    <!-- Main -->
+    <main>
+
+      <!-- popup.js -->
+      <article id="popup.js">
+        <h1>popup.js</h1>
+        <a href="https://ohno.github.io/popup.js/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/ohno/popup.js@latest/popup.min.js&quot;&gt;&lt;/script&gt;
+<br>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/ohno/popup.js/popup.min.css&quot;&gt;</code></pre>
+        <pre><code class="language-html">&lt;input id=&quot;popup-input&quot; value=&quot;ここに書いてある文字列を表示します。&quot;&gt;
+&lt;button onClick='popup(document.getElementById(&quot;popup-input&quot;).value);'&gt;ポップアップ表示&lt;/button&gt;</code></pre>
+        <input id="popup-input" value="ここに書いてある文字列を表示します。">
+        <button onClick='popup(document.getElementById("popup-input").value);'>ポップアップ表示</button>
+      </article>
+
+      <!-- clipboard.js -->
+      <article id="clipboard.js">
+        <h1>clipboard.js</h1>
+        <a href="https://clipboardjs.com/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;input id=&quot;foo&quot; value=&quot;ここに書いてある文字列をクリップボードにコピーします。&quot;&gt;
+&lt;button class=&quot;btn&quot; data-clipboard-target=&quot;#foo&quot; onClick='popup(&quot;コピーしました&quot;)'&gt;クリップボードにコピー&lt;/button&gt;
+&lt;script&gt;new ClipboardJS('.btn');&lt;/script&gt;</code></pre>
+        <input id="foo" value="ここに書いてある文字列をクリップボードにコピーします。">
+        <button class="btn" data-clipboard-target="#foo" onClick='popup("コピーしました")'>クリップボードにコピー</button>
+        <script>new ClipboardJS('.btn');</script>
+      </article>
+
+      <!-- download.js -->
+      <article id="download.js">
+        <h1>download.js</h1>
+        <a href="http://danml.com/download.html" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/rndme/download@latest/download.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;input id=&quot;download-input&quot; value=&quot;ここに書いてある文字列をダウンロードします。&quot;&gt;
+&lt;button onClick='download(document.getElementById(&quot;download-input&quot;).value, &quot;download.txt&quot;, &quot;text/plain&quot;);'&gt;ダウンロード&lt;/button&gt;</code></pre>
+        <input id="download-input" value="ここに書いてある文字列をダウンロードします。">
+        <button onClick='download(document.getElementById("download-input").value, "download.txt", "text/plain");'>ダウンロード</button>
+      </article>
+
+      <!-- escape-html -->
+      <article id="escape-html">
+        <h1>escape-html</h1>
+        <a href="https://github.com/component/escape-html" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html"></code></pre>
+        <pre><code class="language-html"></code></pre>
+      </article>
+
+      <!-- Marked -->
+      <article id="Marked">
+        <h1>Marked</h1>
+        <a href="https://github.com/markedjs/marked" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;script&gt;document.write(marked('- a\n - b\n - c'));&lt;/script&gt;</code></pre>
+        <script>document.write(marked('- a\n - b\n - c'));</script>
+        <br>
+        <pre><code class="language-html">&lt;textarea id=&quot;markdown-input&quot; class=&quot;input&quot; onInput='this.rows = this.value.split(&quot;\n&quot;).lenght; document.getElementById(&quot;markdown-output&quot;).value = marked(this.value);'&gt;&lt;/textarea&gt;
+&lt;textarea id=&quot;markdown-output&quot;&gt;&lt;/textarea&gt;</code></pre>
+        <textarea id="markdown-input" class="input" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("markdown-output").value = marked(this.value);'></textarea>
+        <textarea id="markdown-output"></textarea>
+        <script>document.getElementById("markdown-input").value = "# example\n- a\n- b\n- c";</script>
+        <script>document.getElementById("markdown-output").value = marked(document.getElementById("markdown-input").value);</script>
+      </article>
+
+      <!-- EasyMDE -->
+      <article id="EasyMDE">
+        <h1>EasyMDE</h1>
+        <a href="https://github.com/Ionaru/easy-markdown-editor" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/easymde/dist/easymde.min.css&quot;&gt;
+&lt;script src=&quot;https://unpkg.com/easymde/dist/easymde.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;textarea id=&quot;my-text-area&quot;&gt;&lt;/textarea&gt;
+&lt;script&gt;
+var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+&lt;/script&gt;</code></pre>
+        <textarea id="my-text-area"></textarea>
+        <script>
+        var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+        </script>    
+      </article>
+
+      <!-- MathJax -->
+      <article id="MathJax">
+        <h1>MathJax</h1>
+        <a href="https://www.mathjax.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script id=&quot;MathJax-script&quot; async src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+        <div class="column-2">
+          <pre><code class="language-html">$$
+  \begin{align}
+    \hat{H}\psi &= E\psi\\
+    \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
+  \end{align}
+$$</code></pre>
+
+          <div>$$
+            \begin{align}
+              \hat{H}\psi &= E\psi\\
+              \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
+            \end{align}
+          $$</div>
+
+        </div>
+      </article>
+
+      <!-- Material Icons -->
+      <article id="Material Icons">
+        <h1>Material Icons</h1>
+        <a href="https://fonts.google.com/icons" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&gt;</code></pre>
+        <pre><code class="language-html">&lt;i class=&quot;material-icons&quot;&gt;home&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;search&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;notifications&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;email&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;message&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;post_add&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;article&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;edit&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;delete&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;link&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;send&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;perm_identity&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;list&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;more_vert&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;account_circle&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;help&lt;/i&gt;
+&lt;i class=&quot;material-icons&quot;&gt;settings&lt;/i&gt;</code></pre>
+        <i class="material-icons">home</i>
+        <i class="material-icons">search</i>
+        <i class="material-icons">notifications</i>
+        <i class="material-icons">email</i>
+        <i class="material-icons">message</i>
+        <i class="material-icons">post_add</i>
+        <i class="material-icons">article</i>
+        <i class="material-icons">edit</i>
+        <i class="material-icons">delete</i>
+        <i class="material-icons">link</i>
+        <i class="material-icons">send</i>
+        <i class="material-icons">perm_identity</i>
+        <i class="material-icons">list</i>
+        <i class="material-icons">more_vert</i>
+        <i class="material-icons">account_circle</i>
+        <i class="material-icons">help</i>
+        <i class="material-icons">settings</i>
+        <br><br>
+        <pre><code class="language-html">&lt;script&gt;
+function clicked(obj) {
+  if(obj.textContent==obj.getAttribute(&quot;before&quot;)) {
+    obj.textContent=obj.getAttribute(&quot;after&quot;);
+  }else{
+    obj.textContent=obj.getAttribute(&quot;before&quot;);
+  };
+};
+&lt;/script&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;favorite_border&quot; after=&quot;favorite&quot;&gt;favorite_border&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;bookmark_border&quot; after=&quot;bookmark&quot;&gt;bookmark_border&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;menu&quot; after=&quot;close&quot;&gt;menu&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;download&quot; after=&quot;download_done&quot;&gt;download&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;cloud&quot; after=&quot;cloud_off&quot;&gt;cloud&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;visibility&quot; after=&quot;visibility_off&quot;&gt;visibility&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;play_circle&quot; after=&quot;pause_circle&quot;&gt;play_circle&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;mic_none&quot; after=&quot;mic_off&quot;&gt;mic_none&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;volume_up&quot; after=&quot;volume_off&quot;&gt;volume_up&lt;/a&gt;
+&lt;a class=&quot;material-icons&quot; onClick='clicked(this);' before=&quot;wifi&quot; after=&quot;wifi_off&quot;&gt;wifi&lt;/a&gt;</code></pre>
+        
+        <script>
+          function clicked(obj) {
+            if(obj.textContent==obj.getAttribute("before")) {
+              obj.textContent=obj.getAttribute("after");
+            }else{
+              obj.textContent=obj.getAttribute("before");
+            };
+          };
+        </script>
+        <a class="material-icons" onClick='clicked(this);' before="menu" after="close">menu</a>
+        <a class="material-icons" onClick='clicked(this);' before="settings" after="close">settings</a>
+        <a class="material-icons" onClick='clicked(this);' before="check_box_outline_blank" after="check_box">check_box_outline_blank</a>
+        <a class="material-icons" onClick='clicked(this);' before="radio_button_unchecked" after="radio_button_checked">radio_button_unchecked</a>
+        <a class="material-icons" onClick='clicked(this);' before="toggle_on" after="toggle_off">toggle_on</a>
+        <a class="material-icons" onClick='clicked(this);' before="favorite_border" after="favorite">favorite_border</a>
+        <a class="material-icons" onClick='clicked(this);' before="bookmark_border" after="bookmark">bookmark_border</a>
+        <a class="material-icons" onClick='clicked(this);' before="wifi" after="wifi_off">wifi</a>
+        <a class="material-icons" onClick='clicked(this);' before="network_wifi" after="signal_wifi_off">network_wifi</a>
+        <a class="material-icons" onClick='clicked(this);' before="network_cell" after="signal_cellular_off">network_cell</a>
+        <a class="material-icons" onClick='clicked(this);' before="download" after="download_done">download</a>
+        <a class="material-icons" onClick='clicked(this);' before="cloud" after="cloud_off">cloud</a>
+        <a class="material-icons" onClick='clicked(this);' before="link" after="link_off">link</a>
+        <a class="material-icons" onClick='clicked(this);' before="visibility" after="visibility_off">visibility</a>
+        <a class="material-icons" onClick='clicked(this);' before="play_arrow" after="pause">play_arrow</a>
+        <a class="material-icons" onClick='clicked(this);' before="play_circle" after="pause_circle">play_circle</a>
+        <a class="material-icons" onClick='clicked(this);' before="volume_up" after="volume_off">volume_up</a>
+        <a class="material-icons" onClick='clicked(this);' before="mic_none" after="mic_off">mic_none</a>
+        <a class="material-icons" onClick='clicked(this);' before="videocam" after="videocam_off">videocam</a>
+
+      </article>
+
+      <!-- MoreToggles.css -->
+      <article id="MoreToggles.css">
+        <h1>MoreToggles.css</h1>
+        <a href="https://jnkkkk.github.io/MoreToggles.css/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/JNKKKK/MoreToggles.css/output/moretoggles.min.css&quot;&gt;</code></pre>
+        <pre><code class="language-html">&lt;div class=&quot;mt-ios&quot;&gt; 
+  &lt;input id=&quot;mt1&quot; type=&quot;checkbox&quot; checked=&quot;true&quot;/&gt;
+  &lt;label for=&quot;mt1&quot;&gt;&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+        <div class="mt-ios"> 
+          <input id="mt1" type="checkbox" checked="true"/>
+          <label for="mt1"></label>
+        </div>
+      </article>
+
+      <!-- GitHub:buttons -->
+      <article id="GitHub:buttons">
+        <h1>GitHub:buttons</h1>
+        <a href="https://buttons.github.io/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script async defer src=&quot;https://buttons.github.io/buttons.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;a class=&quot;github-button&quot; href=&quot;https://github.com/ohno&quot; aria-label=&quot;Follow @ohno on GitHub&quot;&gt;Follow @ohno&lt;/a&gt;</code></pre>
+        <a class="github-button" href="https://github.com/ohno" aria-label="Follow @ohno on GitHub">Follow @ohno</a>
+      </article>
+      
+      <!-- shields.io -->
+      <article id="Shields.io">
+        <h1>Shields.io</h1>
+        <a href="https://shields.io/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;img alt=&quot;JavaScript&quot; src=&quot;https://img.shields.io/badge/JavaScript-323330.svg?style=flat&amp;logo=javascript&amp;logoColor=F7DF1E&quot;/&gt;</code></pre>
+        <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-323330.svg?style=flat&logo=javascript&logoColor=F7DF1E"/>
+      </article>
+
+      <!-- highlight.js -->
+      <article id="highlight.js">
+        <h1>highlight.js</h1>
+        <a href="https://highlightjs.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/atom-one-dark.min.css&quot;&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.highlightAll();&lt;/script&gt;</code></pre>
+
+  <pre><code class="language-html">&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;#!/bin/sh
+
+foo = 123
+bar = 456
+hoge = $foo + $bar
+echo $hoge
+&lt;/code&gt;&lt;/pre&gt;</code></pre>
+
+  <pre><code class="language-bash">#!/bin/bash
+
+foo = 123
+bar = 456
+hoge = $foo + $bar
+echo $hoge
+</code></pre>
+      </article>
+
+      <!-- c3.js -->
+      <article id="c3.js">
+        <h1>c3.js</h1>
+        <a href="https://c3js.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css&quot;&gt;
+&lt;script src=&quot;https://d3js.org/d3.v5.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 50, 20, 10, 40, 15, 25]
+        ]
+      }
+  });
+&lt;/script&gt;
+</code></pre>
+      <div id="chart"></div>
+        <script>
+          var chart = c3.generate({
+              bindto: '#chart',
+              data: {
+                columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+              }
+          });
+        </script>
+
+      </article>
+    
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <a href="https://github.com/ohno/">© 2021 Shuhei Ohno</a>
+    </footer>	
+  </body>
+</html>
