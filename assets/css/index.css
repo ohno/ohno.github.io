@@ -126,7 +126,8 @@ footer{
 
 /* main */
 article {
-  margin-top: 40px;
+  margin-top: -55px;
+  padding-top: 95px;
 }
 
 article h1{

@@ -8,6 +8,18 @@
     <link rel="icon" href="./assets/image/favicon.svg" type="image/svg+xml"/>
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- c3.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js"></script>
+    <!-- MathJax -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <!-- Marked -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- EasyMDE -->
+    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
+    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
     <!-- popup.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ohno/popup.js/popup.min.css">
     <script src="https://cdn.jsdelivr.net/gh/ohno/popup.js@latest/popup.min.js"></script>
@@ -15,16 +27,6 @@
     <script src="https://cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.min.js"></script>
     <!-- download.js -->
     <script src="https://cdn.jsdelivr.net/gh/rndme/download@latest/download.min.js"></script>
-    <!-- escape-html -->
-    <script src="https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js"></script>
-    <!-- Marked -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- EasyMDE -->
-    <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
-    <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
-    <!-- MathJax -->
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <!-- Material Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- MoreToggles.css -->
@@ -35,15 +37,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/styles/atom-one-dark.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.2.0/build/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
-    <!-- c3.js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js"></script>
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- escape-html -->
+    <script src="https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js"></script>
   </head>
 
   <body>
@@ -62,6 +57,98 @@
 
     <!-- Main -->
     <main>
+
+      <!-- c3.js -->
+      <article id="c3.js">
+        <h1>c3.js</h1>
+        <a href="https://c3js.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css&quot;&gt;
+&lt;script src=&quot;https://d3js.org/d3.v5.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  var chart = c3.generate({
+      bindto: '#chart',
+      data: {
+        columns: [
+          ['data1', 30, 200, 100, 400, 150, 250],
+          ['data2', 50, 20, 10, 40, 15, 25]
+        ]
+      }
+  });
+&lt;/script&gt;
+</code></pre>
+      <div id="chart"></div>
+        <script>
+          var chart = c3.generate({
+              bindto: '#chart',
+              data: {
+                columns: [
+                  ['data1', 30, 200, 100, 400, 150, 250],
+                  ['data2', 50, 20, 10, 40, 15, 25]
+                ]
+              }
+          });
+        </script>
+
+      </article>
+
+      <!-- MathJax -->
+      <article id="MathJax">
+        <h1>MathJax</h1>
+        <a href="https://www.mathjax.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script id=&quot;MathJax-script&quot; async src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://polyfill.io/v3/polyfill.min.js?features=es6&quot;&gt;&lt;/script&gt;</code></pre>
+
+        <div class="column-2">
+          <pre><code class="language-html">$$
+  \begin{align}
+    \hat{H}\psi &= E\psi\\
+    \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
+  \end{align}
+$$</code></pre>
+
+          <div>$$
+            \begin{align}
+              \hat{H}\psi &= E\psi\\
+              \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
+            \end{align}
+          $$</div>
+
+        </div>
+      </article>
+
+      <!-- Marked -->
+      <article id="Marked">
+        <h1>Marked</h1>
+        <a href="https://github.com/markedjs/marked" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;script&gt;document.write(marked('- a\n - b\n - c'));&lt;/script&gt;</code></pre>
+        <script>document.write(marked('- a\n - b\n - c'));</script>
+        <br>
+        <pre><code class="language-html">&lt;textarea onInput='document.getElementById(&quot;markdown-output&quot;).value = marked(this.value);'&gt;&lt;/textarea&gt;
+&lt;textarea id=&quot;markdown-output&quot;&gt;&lt;/textarea&gt;</code></pre>
+        <textarea id="markdown-input" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("markdown-output").value = marked(this.value);'></textarea>
+        <textarea id="markdown-output"></textarea>
+        <script>document.getElementById("markdown-input").value = "# example\n- a\n- b\n- c";</script>
+        <script>document.getElementById("markdown-output").value = marked(document.getElementById("markdown-input").value);</script>
+      </article>
+
+      <!-- EasyMDE -->
+      <article id="EasyMDE">
+        <h1>EasyMDE</h1>
+        <a href="https://github.com/Ionaru/easy-markdown-editor" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/easymde/dist/easymde.min.css&quot;&gt;
+&lt;script src=&quot;https://unpkg.com/easymde/dist/easymde.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;textarea id=&quot;my-text-area&quot;&gt;&lt;/textarea&gt;
+&lt;script&gt;
+var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+&lt;/script&gt;</code></pre>
+        <textarea id="my-text-area"></textarea>
+        <script>
+        var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
+        </script>    
+      </article>
 
       <!-- popup.js -->
       <article id="popup.js">
@@ -97,70 +184,6 @@
 &lt;button onClick='download(document.getElementById(&quot;download-input&quot;).value, &quot;download.txt&quot;, &quot;text/plain&quot;);'&gt;ダウンロード&lt;/button&gt;</code></pre>
         <input id="download-input" value="ここに書いてある文字列をダウンロードします。">
         <button onClick='download(document.getElementById("download-input").value, "download.txt", "text/plain");'>ダウンロード</button>
-      </article>
-
-      <!-- escape-html -->
-      <article id="escape-html">
-        <h1>escape-html</h1>
-        <a href="https://github.com/component/escape-html" target="_blank" class="material-icons">open_in_new</a>
-        <pre><code class="language-html"></code></pre>
-        <pre><code class="language-html"></code></pre>
-      </article>
-
-      <!-- Marked -->
-      <article id="Marked">
-        <h1>Marked</h1>
-        <a href="https://github.com/markedjs/marked" target="_blank" class="material-icons">open_in_new</a>
-        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <pre><code class="language-html">&lt;script&gt;document.write(marked('- a\n - b\n - c'));&lt;/script&gt;</code></pre>
-        <script>document.write(marked('- a\n - b\n - c'));</script>
-        <br>
-        <pre><code class="language-html">&lt;textarea id=&quot;markdown-input&quot; class=&quot;input&quot; onInput='this.rows = this.value.split(&quot;\n&quot;).lenght; document.getElementById(&quot;markdown-output&quot;).value = marked(this.value);'&gt;&lt;/textarea&gt;
-&lt;textarea id=&quot;markdown-output&quot;&gt;&lt;/textarea&gt;</code></pre>
-        <textarea id="markdown-input" class="input" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("markdown-output").value = marked(this.value);'></textarea>
-        <textarea id="markdown-output"></textarea>
-        <script>document.getElementById("markdown-input").value = "# example\n- a\n- b\n- c";</script>
-        <script>document.getElementById("markdown-output").value = marked(document.getElementById("markdown-input").value);</script>
-      </article>
-
-      <!-- EasyMDE -->
-      <article id="EasyMDE">
-        <h1>EasyMDE</h1>
-        <a href="https://github.com/Ionaru/easy-markdown-editor" target="_blank" class="material-icons">open_in_new</a>
-        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/easymde/dist/easymde.min.css&quot;&gt;
-&lt;script src=&quot;https://unpkg.com/easymde/dist/easymde.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <pre><code class="language-html">&lt;textarea id=&quot;my-text-area&quot;&gt;&lt;/textarea&gt;
-&lt;script&gt;
-var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
-&lt;/script&gt;</code></pre>
-        <textarea id="my-text-area"></textarea>
-        <script>
-        var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
-        </script>    
-      </article>
-
-      <!-- MathJax -->
-      <article id="MathJax">
-        <h1>MathJax</h1>
-        <a href="https://www.mathjax.org/" target="_blank" class="material-icons">open_in_new</a>
-        <pre><code class="language-html">&lt;script id=&quot;MathJax-script&quot; async src=&quot;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&quot;&gt;&lt;/script&gt;</code></pre>
-
-        <div class="column-2">
-          <pre><code class="language-html">$$
-  \begin{align}
-    \hat{H}\psi &= E\psi\\
-    \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
-  \end{align}
-$$</code></pre>
-
-          <div>$$
-            \begin{align}
-              \hat{H}\psi &= E\psi\\
-              \hat{H} &= -\frac{\hbar^2}{2m}\frac{\partial^2}{\partial x^2} + V(x)
-            \end{align}
-          $$</div>
-
-        </div>
       </article>
 
       <!-- Material Icons -->
@@ -310,40 +333,18 @@ hoge = $foo + $bar
 echo $hoge
 </code></pre>
       </article>
-
-      <!-- c3.js -->
-      <article id="c3.js">
-        <h1>c3.js</h1>
-        <a href="https://c3js.org/" target="_blank" class="material-icons">open_in_new</a>
-        <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.css&quot;&gt;
-&lt;script src=&quot;https://d3js.org/d3.v5.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/c3@0.7.20/c3.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <pre><code class="language-html">&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-  var chart = c3.generate({
-      bindto: '#chart',
-      data: {
-        columns: [
-          ['data1', 30, 200, 100, 400, 150, 250],
-          ['data2', 50, 20, 10, 40, 15, 25]
-        ]
-      }
-  });
-&lt;/script&gt;
-</code></pre>
-      <div id="chart"></div>
-        <script>
-          var chart = c3.generate({
-              bindto: '#chart',
-              data: {
-                columns: [
-                  ['data1', 30, 200, 100, 400, 150, 250],
-                  ['data2', 50, 20, 10, 40, 15, 25]
-                ]
-              }
-          });
-        </script>
-
+      
+      <!-- escape-html -->
+      <article id="escape-html">
+        <h1>escape-html</h1>
+        <a href="https://github.com/component/escape-html" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;textarea onInput=&#39;document.getElementById(&quot;escaped-html&quot;).value = escapeHtml(this.value);&#39;&gt;&lt;/textarea&gt;
+&lt;textarea id=&quot;escaped-html&quot;&gt;&lt;/textarea&gt;</code></pre>
+        <textarea id="raw-html" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("escaped-html").value = escapeHtml(this.value);'></textarea>
+        <textarea id="escaped-html"></textarea>
+        <script>document.getElementById("raw-html").value = "\<script src=\"https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js\"\>\<\/script\>";</script>
+        <script>document.getElementById("escaped-html").value = escapeHtml(document.getElementById("raw-html").value);</script>
       </article>
     
     </main>
