@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">
     <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
     <!-- popup.js -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ohno/popup.js/popup.min.css">
-    <script src="https://cdn.jsdelivr.net/gh/ohno/popup.js@latest/popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ohno/popup.js@1.0.1/popup.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ohno/popup.js@1.0.1/popup.min.css">
     <!-- clipboard.js -->
     <script src="https://cdn.jsdelivr.net/npm/clipboard@latest/dist/clipboard.min.js"></script>
     <!-- download.js -->
@@ -123,15 +123,14 @@ $$</code></pre>
         <h1>Marked</h1>
         <a href="https://github.com/markedjs/marked" target="_blank" class="material-icons">open_in_new</a>
         <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/marked/marked.min.js&quot;&gt;&lt;/script&gt;</code></pre>
-        <pre><code class="language-html">&lt;script&gt;document.write(marked('- a\n - b\n - c'));&lt;/script&gt;</code></pre>
-        <script>document.write(marked('- a\n - b\n - c'));</script>
-        <br>
-        <pre><code class="language-html">&lt;textarea onInput='document.getElementById(&quot;markdown-output&quot;).value = marked(this.value);'&gt;&lt;/textarea&gt;
+        <pre><code class="language-html">&lt;script&gt;console.log(marked.parse('- a\n - b\n - c'));&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;textarea onInput='document.getElementById(&quot;markdown-output&quot;).value = marked.parse(this.value);'&gt;&lt;/textarea&gt;
 &lt;textarea id=&quot;markdown-output&quot;&gt;&lt;/textarea&gt;</code></pre>
-        <textarea id="markdown-input" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("markdown-output").value = marked(this.value);'></textarea>
+        <textarea id="markdown-input" onInput='this.rows = this.value.split("\n").lenght; document.getElementById("markdown-output").value = marked.parse(this.value);'></textarea>
         <textarea id="markdown-output"></textarea>
+        <script>console.log(marked.parse('- a\n - b\n - c'));</script>
         <script>document.getElementById("markdown-input").value = "# example\n- a\n- b\n- c";</script>
-        <script>document.getElementById("markdown-output").value = marked(document.getElementById("markdown-input").value);</script>
+        <script>document.getElementById("markdown-output").value = marked.parse(document.getElementById("markdown-input").value);</script>
       </article>
 
       <!-- EasyMDE -->
