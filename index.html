@@ -39,6 +39,8 @@
     <script>hljs.highlightAll();</script>
     <!-- escape-html -->
     <script src="https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js"></script>
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@latest/build/three.min.js"></script>
   </head>
 
   <body>
@@ -344,6 +346,75 @@ echo $hoge
         <textarea id="escaped-html"></textarea>
         <script>document.getElementById("raw-html").value = "\<script src=\"https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js\"\>\<\/script\>";</script>
         <script>document.getElementById("escaped-html").value = escapeHtml(document.getElementById("raw-html").value);</script>
+      </article>
+
+      <!-- Three.js -->
+      <article id="Three.js">
+        <h1>Three.js</h1>
+        <a href="https://threejs.org/" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/mrdoob/three.js@latest/build/three.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;script&gt;
+    let camera, scene, renderer;
+    let geometry, material, mesh;
+
+    init();
+
+    function init() {
+        camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+        camera.position.z = 1;
+
+        scene = new THREE.Scene();
+
+        geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+        material = new THREE.MeshNormalMaterial();
+
+        mesh = new THREE.Mesh( geometry, material );
+        scene.add( mesh );
+
+        renderer = new THREE.WebGLRenderer( { antialias: true } );
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        renderer.setAnimationLoop( animation );
+        document.body.appendChild( renderer.domElement );
+    }
+
+    function animation( time ) {
+        mesh.rotation.x = time / 2000;
+        mesh.rotation.y = time / 1000;
+
+        renderer.render( scene, camera );
+    }
+&lt;/script&gt;</code></pre>
+        <script>
+          let camera, scene, renderer;
+          let geometry, material, mesh;
+
+          init();
+
+          function init() {
+            camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 10 );
+            camera.position.z = 1;
+
+            scene = new THREE.Scene();
+
+            geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+            material = new THREE.MeshNormalMaterial();
+
+            mesh = new THREE.Mesh( geometry, material );
+            scene.add( mesh );
+
+            renderer = new THREE.WebGLRenderer( { antialias: true } );
+            renderer.setSize( window.innerWidth, window.innerHeight );
+            renderer.setAnimationLoop( animation );
+            document.body.appendChild( renderer.domElement );
+          }
+
+          function animation( time ) {
+            mesh.rotation.x = time / 2000;
+            mesh.rotation.y = time / 1000;
+
+            renderer.render( scene, camera );
+          }
+        </script>
       </article>
     
     </main>

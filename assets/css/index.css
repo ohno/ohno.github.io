@@ -109,7 +109,7 @@ footer{
 	align-items: center;
   justify-content: center;
   height: 60px;
-  width: calc(100vw - 40px);
+  /* width: calc(100vw - 40px); */
   margin-top: 20px;
   margin-bottom: -80px;
 }
@@ -120,7 +120,7 @@ footer{
     padding-right: calc((100vw - 800px) / 2);
   }
   footer {
-    width: 800px;
+    /* width: 800px; */
   }
 }
 
@@ -182,4 +182,9 @@ textarea {
   word-wrap: break-word;
   resize: vertical;
   height: 100px;
+}
+
+canvas {
+  width: 100%!important;
+  height: auto!important;
 }
