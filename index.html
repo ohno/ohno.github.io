@@ -39,6 +39,8 @@
     <script>hljs.highlightAll();</script>
     <!-- escape-html -->
     <script src="https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js"></script>
+    <!-- mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <!-- Three.js -->
     <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@latest/build/three.min.js"></script>
   </head>
@@ -148,7 +150,7 @@ var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
         <textarea id="my-text-area"></textarea>
         <script>
         var easyMDE = new EasyMDE({element: document.getElementById('my-text-area')});
-        </script>    
+        </script>
       </article>
 
       <!-- popup.js -->
@@ -346,6 +348,27 @@ echo $hoge
         <textarea id="escaped-html"></textarea>
         <script>document.getElementById("raw-html").value = "\<script src=\"https://cdn.jsdelivr.net/gh/component/escape-html@latest/index.min.js\"\>\<\/script\>";</script>
         <script>document.getElementById("escaped-html").value = escapeHtml(document.getElementById("raw-html").value);</script>
+      </article>
+
+      <!-- Mermaid.js -->
+      <article id="mermaid.js">
+        <h1>mermaid.js</h1>
+        <a href="https://github.com/mermaid-js/mermaid/blob/develop/docs/usage.md" target="_blank" class="material-icons">open_in_new</a>
+        <pre><code class="language-html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@mermaid-js/mermaid-cli@8.13.3/mermaid.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+        <pre><code class="language-html">&lt;div class=&quot;mermaid&quot;&gt;
+  graph TD;
+  A--&gt;|a| B;
+  A--&gt;|b| C;
+  B--&gt;|a&#39;| D;
+  C--&gt;|b&#39;| D;
+&lt;/div&gt;</code></pre>
+        <div class="mermaid">
+          graph TD;
+          A-->|a| B;
+          A-->|b| C;
+          B-->|a'| D;
+          C-->|b'| D;
+        </div>
       </article>
 
       <!-- Three.js -->
